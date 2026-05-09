@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Todo</h1>
+      <button class="theme-btn" id="themeToggle" aria-label="테마 전환">🌙</button>
+    </header>
+
+    <div class="input-row">
+      <input
+        type="text"
+        id="todoInput"
+        placeholder="새 할 일을 입력하세요..."
+        maxlength="200"
+        autocomplete="off"
+        aria-label="새 할 일"
+      >
+      <select id="prioritySelect" aria-label="우선순위">
+        <option value="normal">보통</option>
+        <option value="high">높음</option>
+        <option value="low">낮음</option>
+      </select>
+      <button id="addBtn" aria-label="추가">+</button>
+    </div>
+
+    <nav class="filters" role="tablist" aria-label="필터">
+      <button class="filter-btn active" data-filter="all"       role="tab" aria-selected="true">전체</button>
+      <button class="filter-btn"        data-filter="active"    role="tab" aria-selected="false">진행 중</button>
+      <button class="filter-btn"        data-filter="completed" role="tab" aria-selected="false">완료됨</button>
+    </nav>
+
+    <ul class="todo-list" id="todoList" aria-label="할 일 목록"></ul>
+
+    <footer id="footer">
+      <span id="itemCount"></span>
+      <button id="clearCompleted">완료 항목 삭제</button>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
